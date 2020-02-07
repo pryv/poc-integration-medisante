@@ -12,8 +12,11 @@ module.exports = function (expressApp: express$Application, settings: Object) {
     async (req: express$Request, res: express$Response, next: express$NextFunction) => {
       try {
         const msgBody = req.body;
-        logger.info('got req');
+        logger.info('XXXXXXXXXX BODY XXXXXXXXXX');
         logger.info(JSON.stringify(req.body));
+
+        logger.info('XXXXXXXXXX HEADERS XXXXXXXXXX');
+        logger.info(JSON.stringify(req.headers));
         
         res.status(200).send("salut");
       } catch (err) {
