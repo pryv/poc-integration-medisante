@@ -37,7 +37,7 @@ module.exports = function (expressApp: express$Application, settings: Object) {
         }
         
         
-      
+        logger.info('');
         res.status(200).send('salut');
       } catch (err) {
         next(err);
