@@ -4,26 +4,19 @@ const request = require('superagent');
 const url = require('url');
 
 class Connection {
+  pryvApiEndpoint: string;
 
-  token: ?string;
-  username: string;
-  coreUrl: string;
-
-  constructor(settings: Object, username: string, token: ?string) {
-    this.username = username;
-    this.coreUrl = settings.get('core:url');
-    this.token = token;
-  }
-
-  buildUrl(path: string): string {
-    return url.resolve(`${this.coreUrl}/${this.username}`, path);
+  constructor(pryvApiEndpoint: string) {
+    this.pryvApiEndpoint = pryvApiEndpoint;
   }
 
   async createEvent(event: Object): Promise<any> {
-    return await request
-      .post(buildUrl('/events'))
-      .send(event);
+    return await request.post(buildUrl('/events')).send(event);
   }
+}
+
+function buildUrl(path: string): string {
+  return url.resolve(`${this.pryvApiEndpoint}`, path);
 }
 
 module.exports = Connection;
