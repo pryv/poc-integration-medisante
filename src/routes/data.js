@@ -48,7 +48,7 @@ module.exports = function (expressApp: express$Application, settings: Object) {
 };
 
 function parseWeight(body: Object): Object {
-  let t = new Date(body.measurements.bodyWeight.timestamp);
+  let t = new Date(body.measurements.timestamp);
   const event = {
     streamId: MEDISANTE_STREAMID,
     type: 'mass/kg',
