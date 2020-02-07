@@ -18,7 +18,7 @@ class Application {
     const expressApp = express();
 
     expressApp.use(express.json());
-    expressApp.use(bodyParser.json({ limit: '10mb' }));
+    expressApp.use(bodyParser.json({ limit: '20mb' }));
     
     require('./routes/data')(expressApp, this.settings);
 
