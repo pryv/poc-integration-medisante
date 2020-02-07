@@ -2,7 +2,8 @@
 
 Bridge for Médisanté devices.
 
-Deployed on **bridge-medisante.pryv.net**
+Deployed on **bridge-medisante.pryv.net:/home/kebetsi/pryv/bridge-medisante**.  
+To update it: `git pull` with user *kebetsi* (uses GitHub Deploy key)
 
 Prerequisites: Node v8+, Yarn v1+
 
