@@ -12,13 +12,13 @@ class Connection {
   }
 
   async createEvent(event: Object): Promise<any> {
-    console.log('Create Pryv event for', buildUrl('/events'));
-    return await request.post(buildUrl('/events')).send(event);
+    console.log('Create Pryv event for', this.buildUrl('/events'));
+    return await request.post(this.buildUrl('/events')).send(event);
   }
-}
 
-function buildUrl(path: string): string {
-  return url.resolve(this.pryvApiEndpoint, path);
+  buildUrl(path: string): string {
+    return url.resolve(this.pryvApiEndpoint, path);
+  }
 }
 
 module.exports = Connection;
