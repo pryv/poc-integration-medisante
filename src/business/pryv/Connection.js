@@ -11,6 +11,7 @@ class Connection {
   }
 
   async createEvent(event: Object): Promise<any> {
+    console.log('Create Pryv event for', buildUrl('/events'));
     return await request.post(buildUrl('/events')).send(event);
   }
 }
