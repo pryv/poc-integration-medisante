@@ -15,7 +15,7 @@ class Connection {
     this.token = token;
   }
 
-  function buildUrl(path: string): string {
+  buildUrl(path: string): string {
     return url.resolve(`${this.coreUrl}/${this.username}`, path);
   }
 
