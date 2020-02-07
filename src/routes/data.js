@@ -13,7 +13,7 @@ module.exports = function (expressApp: express$Application, settings: Object) {
       try {
         const msgBody = req.body;
         logger.info('got req');
-        logger.info(JSON.stringify(req));
+        logger.info(JSON.stringify(req.body));
         
         res.status(200).send("salut");
       } catch (err) {
