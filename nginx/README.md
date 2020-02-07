@@ -4,6 +4,8 @@
 
 Reference: [https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/](https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/)
 
+## Install cert
+
 1. add service config
 
 in `/etc/nginx/sites-available/${SERVICE_HOSTNAME}.conf`, add:
@@ -36,3 +38,9 @@ server {
 when prompted to redirect from HTTP to HTTPS, say yes
 
 5. reboot NGINX `service nginx restart`
+
+## Set auto-renewal
+
+1. Open `crontab -e`
+
+2. add line: `0 12 * * * /usr/bin/certbot renew --quiet`
