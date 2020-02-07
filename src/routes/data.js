@@ -32,12 +32,13 @@ module.exports = function (expressApp: express$Application, settings: Object) {
 
         if (event) {
           const pryvResponse = await con.createEvent(event);
+          logger.info('XXXXXXXXXX PRYV RESPONSE XXXXXXXXXX');
+          logger.info(JSON.stringify(pryvResponse.body));
         }
         
-        logger.info('XXXXXXXXXX PRYV RESPONSE XXXXXXXXXX');
-        logger.info(JSON.stringify(pryvResponse.body));
         
-        res.status(200).send("salut");
+      
+        res.status(200).send('salut');
       } catch (err) {
         next(err);
       }
@@ -47,13 +48,13 @@ module.exports = function (expressApp: express$Application, settings: Object) {
 };
 
 function parseWeight(body: Object): Object {
-  let t = new Date(body.measurements.bodyWeight.timestamp)
+  let t = new Date(body.measurements.bodyWeight.timestamp);
   const event = {
     streamId: MEDISANTE_STREAMID,
     type: 'mass/kg',
     content: body.measurements.bodyWeight.value,
     time: t.getTime() / 1000
-  }
+  };
   return event;
 }
 
