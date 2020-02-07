@@ -1,6 +1,8 @@
 # bridge-medisante
 
-Bridge for Médisanté devices
+Bridge for Médisanté devices.
+
+Deployed on bridge-medisante.pryv.net
 
 Prerequisites: Node v8+, Yarn v1+
 
