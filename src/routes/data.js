@@ -3,9 +3,8 @@
 const middlewares = require('../middlewares');
 const PryvConnection = require('../business/pryv/Connection');
 const logger = require('../utils/logging').getLogger('routes');
-const errorsFactory = require('../utils/errorsHandling').factory;
 
-const MEDISANTE_STREAMID = 'bridge-medisante'
+const MEDISANTE_STREAMID = 'bridge-medisante';
 
 
 
