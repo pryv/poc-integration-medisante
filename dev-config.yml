@@ -1,0 +1,14 @@
+http:
+  port: 6437
+  ip: localhost
+logs:
+  prefix: config-follower
+  console:
+    active: true
+    level: debug
+    colorize: true
+  file:
+    active: false
+pryv: 
+  pryvApiEndpoint: https://ck6bwmcar00041ep87c8ujf90@testuser.pryv.li  
+
