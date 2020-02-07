@@ -29,6 +29,21 @@ module.exports = function (expressApp: express$Application, settings: Object) {
         if (body.metadata && body.metadata.measurementType && body.metadata.measurementType === 'BodyWeightComposition') {
           event = parseWeight(body);
         }
+        if (
+          body.metadata &&
+          body.metadata.measurementType &&
+          body.metadata.measurementType === 'BloodPressure'
+        ) {
+          event = parseBloodPressure(body);
+        }
+        if (
+          body.metadata &&
+          body.metadata.measurementType &&
+          body.metadata.measurementType === 'Glucose'
+        ) {
+          event = parseGlucose(body);
+        }
+        
 
         if (event) {
           const pryvResponse = await con.createEvent(event);
@@ -46,6 +61,33 @@ module.exports = function (expressApp: express$Application, settings: Object) {
   );
 
 };
+
+function parseGlucose(body: Object): Object {
+  let t = new Date(body.measurements.timestamp);
+  const event = {
+    streamId: MEDISANTE_STREAMID,
+    type: 'density/mmol-l',
+    content: body.measurements.glucose.value,
+    time: t.getTime() / 1000
+  };
+  return event;
+}
+
+
+function parseBloodPressure(body: Object): Object {
+  let t = new Date(body.measurements.timestamp);
+  const event = {
+    streamId: MEDISANTE_STREAMID,
+    type: 'blood-pressure/mmhg-bpm',
+    content: {
+      systolic: body.measurements.systolicBloodPressure.value,
+      diastolic: body.measurements.diastolicBloodPressure.value,
+      rate: body.measurements.pulse.value,
+    },
+    time: t.getTime() / 1000
+  };
+  return event;
+}
 
 function parseWeight(body: Object): Object {
   let t = new Date(body.measurements.timestamp);
