@@ -10,5 +10,5 @@ logs:
   file:
     active: false
 pryv: 
-  pryvApiEndpoint: https://ck6bwmcar00041ep87c8ujf90@testuser.pryv.li  
+  pryvApiEndpoint: "https://ck6bwmcar00041ep87c8ujf90@testuser.pryv.li"
 

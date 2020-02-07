@@ -8,6 +8,7 @@ class Connection {
 
   constructor(pryvApiEndpoint: string) {
     this.pryvApiEndpoint = pryvApiEndpoint;
+    console.log('connection booted with endpoint', this.pryvApiEndpoint);
   }
 
   async createEvent(event: Object): Promise<any> {
@@ -17,7 +18,7 @@ class Connection {
 }
 
 function buildUrl(path: string): string {
-  return url.resolve(`${this.pryvApiEndpoint}`, path);
+  return url.resolve(this.pryvApiEndpoint, path);
 }
 
 module.exports = Connection;
