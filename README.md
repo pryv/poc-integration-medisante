@@ -13,3 +13,4 @@ Prerequisites: Node v8+, Yarn v1+
 | Run API server                    | `yarn start`                   |
 | Run Tests                         | `yarn test`                    |
 
+[NGINX setup](nginx)
