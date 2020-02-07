@@ -12,7 +12,8 @@ module.exports = function (expressApp: express$Application, settings: Object) {
     async (req: express$Request, res: express$Response, next: express$NextFunction) => {
       try {
         const msgBody = req.body;
-        console.log(msgBody);
+        logger.info('got req');
+        logger.info(JSON.stringify(req));
         
         res.status(200).send("salut");
       } catch (err) {
