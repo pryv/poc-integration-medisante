@@ -25,8 +25,8 @@ server {
     } # managed by Certbot
 
 
-    listen 80 default_server;
-    listen [::]:80 default_server;
+    listen 80;
+    listen [::]:80;
     server_name bridge-medisante.pryv.net;
     return 404; # managed by Certbot
 
