@@ -1,6 +1,7 @@
 // @flow
 
 const express = require('express');
+const bodyParser = require('body-parser');
 const middlewares = require('./middlewares');
 const nconfSettings = require('./settings');
 
@@ -17,8 +18,7 @@ class Application {
     const expressApp = express();
 
     expressApp.use(express.json());
-    expressApp.use(express.limit('10M'));
-
+    expressApp.use(bodyParser.json({ limit: '10mb' }));
     
     require('./routes/data')(expressApp, this.settings);
 
