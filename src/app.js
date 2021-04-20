@@ -17,6 +17,8 @@ class Application {
   setupExpressApp(): express$Application {
     const expressApp = express();
 
+    expressApp.disable('x-powered-by');
+
     expressApp.use(express.json());
     expressApp.use(bodyParser.json({ limit: '20mb' }));
     
