@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "correlationId": "30ca6e9b-65fb-43c7-8b1a-5b6303e05614",
+    "receivedTime": "2020-02-07T11:54:47.262521745Z",
+    "deviceGroups": [],
+    "measurementType": "Glucose"
+  },
+  "device": {
+    "id": "",
+    "serialNumber": "90-TEST-01",
+    "IMEI": "900000000000001",
+    "IMSI": "900000000000001",
+    "manufacturer": "ApexBio",
+    "model": "BG800 3G",
+    "timezone": "UTC"
+  },
+  "measurements": {
+    "annotations": {
+      "feeling": "2",
+      "mealMarker": "1"
+    },
+    "glucose": {
+      "value": 5.5,
+      "unit": "mmol/L",
+      "isInRange": true
+    },
+    "timestamp": "2020-02-07T11:54:47.262522052Z"
+  }
+}

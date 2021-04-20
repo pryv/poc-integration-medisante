@@ -1,0 +1,12 @@
+{
+  "host": "bridge_medisante",
+  "connection": "close",
+  "content-length": "625",
+  "user-agent": "Go-http-client/1.1",
+  "accept": "application/json",
+  "content-type": "application/json; charset=utf-8",
+  "x-amzn-trace-id": "Root=1-5e3d3b52-abba29d12d5b7d006d7e0d86;Parent=f6ab0fe8043004c1;Sampled=1",
+  "x-api-key": "npk9Q2PTa22TyQbWn2B8qETh9BDjrMQa",
+  "x-correlation-id": "e006a460-b032-454c-85a1-2d3127a9b683",
+  "accept-encoding": "gzip"
+}
