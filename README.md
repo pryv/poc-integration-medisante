@@ -2,9 +2,6 @@
 
 Integration with Médisanté devices.
 
-Deployed on **bridge-medisante.pryv.net:/home/kebetsi/pryv/bridge-medisante**.  
-To update it: `git pull` with user *kebetsi* (uses GitHub Deploy key)
-
 Prerequisites: Node v8+, Yarn v1+
 
 ## How to?
@@ -46,3 +43,8 @@ curl -X POST -H 'content-type: application/json' -d '{
     "bodyWeight":{"value":80}
   }}' "http://localhost:6437/data"
 ```
+
+
+## License
+
+[BSD-3-Clause](LICENSE)

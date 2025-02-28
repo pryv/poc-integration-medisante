@@ -44,3 +44,8 @@ when prompted to redirect from HTTP to HTTPS, say yes
 1. Open `crontab -e`
 
 2. add line: `0 12 * * * /usr/bin/certbot renew --quiet`
+
+
+## License
+
+[BSD-3-Clause](LICENSE)

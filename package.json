@@ -1,17 +1,19 @@
 {
   "name": "bridge-medisante",
   "version": "1.0.0",
-  "description": "Pryv.io bridge for Médisanté service",
-  "main": "index.js",
-  "repository": "git@github.com:pryv/bridge-medisante.git",
-  "author": "Ilia Kebets <ilia@pryv.com>",
-  "license": "none",
   "private": true,
+  "description": "Pryv.io bridge for Médisanté service",
+  "homepage": "https://pryv.com",
+  "repository": "git@github.com:pryv/bridge-medisante.git",
+  "license": "BSD-3-Clause",
+  "author": "Pryv <info@pryv.com> (https://pryv.com)",
+  "main": "index.js",
   "scripts": {
-    "start": "node_modules/.bin/babel-node src/server.js --config dev-config.yml 2>&1 | tee bridge-medisante.log",
+    "license": "source-licenser --config-file .licenser.yml ./",
     "pm": "node_modules/.bin/pm2 start --interpreter node_modules/.bin/babel-node src/server.js -- --config dev-config.yml 2>&1 | tee bridge-medisante.log",
     "pm-logs": "node_modules/.bin/pm2 logs",
-    "pm-restart": "node_modules/.bin/pm2 restart all"
+    "pm-restart": "node_modules/.bin/pm2 restart all",
+    "start": "node_modules/.bin/babel-node src/server.js --config dev-config.yml 2>&1 | tee bridge-medisante.log"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -32,6 +34,7 @@
     "flow-bin": "^0.103.0",
     "mocha": "^6.2.0",
     "nock": "^10.0.6",
+    "source-licenser": "^2.0.5",
     "supertest": "^4.0.2"
   }
 }
